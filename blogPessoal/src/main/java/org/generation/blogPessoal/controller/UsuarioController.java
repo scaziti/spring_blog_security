@@ -33,7 +33,7 @@ public class UsuarioController
 	@PostMapping("/cadastrar")
 	public ResponseEntity<UsuarioModel> Post(@RequestBody UsuarioModel usuario)
 	{
-		Optional<UsuarioModel> user = Optional.ofNullable(usuarioService.CadastrarUsuario(usuario));
+		Optional<UsuarioModel> user = usuarioService.CadastrarUsuario(usuario);
 		try 
 		{
 			return ResponseEntity.ok(user.get());

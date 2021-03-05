@@ -17,7 +17,7 @@ public class UsuarioService
 	@Autowired
 	private UsuarioRepository repository;
 	
-	public UsuarioModel CadastrarUsuario(UsuarioModel usuario)
+	public Optional<UsuarioModel> CadastrarUsuario(UsuarioModel usuario)
 	{
 		if(repository.findByUsuario(usuario.getUsuario()).isPresent())
 			return null;
@@ -27,7 +27,7 @@ public class UsuarioService
 		String senhaEncoder = encoder.encode(usuario.getSenha());
 		usuario.setSenha(senhaEncoder);
 		
-		return repository.save(usuario);
+		return Optional.of(repository.save(usuario));
 	}
 	
 	public Optional<UserLoginModel> Logar(Optional<UserLoginModel> user)
@@ -46,6 +46,8 @@ public class UsuarioService
 				
 				user.get().setToken(authHeader);
 				user.get().setNome(usuario.get().getNome());
+				user.get().setSenha(usuario.get().getSenha());
+				user.get().setTipoUsuario(usuario.get().getTipoUsuario());
 				
 				return user;
 			}

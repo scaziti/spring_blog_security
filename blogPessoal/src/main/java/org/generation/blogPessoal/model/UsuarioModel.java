@@ -27,6 +27,8 @@ public class UsuarioModel
 	@NotNull
 	@Size(min = 6, max = 100)
 	private String senha;
+	
+	private String tipoUsuario;
 
 	public Long getId() {
 		return id;
@@ -58,5 +60,13 @@ public class UsuarioModel
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public String getTipoUsuario() {
+		return tipoUsuario;
+	}
+
+	public void setTipoUsuario(String tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
 	}
 }
