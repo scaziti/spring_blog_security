@@ -3,6 +3,8 @@ package org.generation.blogPessoal.model;
 // só será utilizado por aqui, por isso não tem anotações de spring
 public class UserLoginModel 
 {
+	private long id;
+	
 	private String nome;
 	
 	private String usuario;
@@ -11,7 +13,21 @@ public class UserLoginModel
 	
 	private String token;
 	
-	private String tipoUsuario;
+	private String tipo;
+	
+	private String foto;
+	
+
+	
+	
+	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
 
 	public String getNome() {
 		return nome;
@@ -45,14 +61,22 @@ public class UserLoginModel
 		this.token = token;
 	}
 
-	public String getTipoUsuario() {
-		return tipoUsuario;
+	public String getTipo() {
+		return tipo;
 	}
 
-	public void setTipoUsuario(String tipoUsuario) {
-		this.tipoUsuario = tipoUsuario;
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
-	
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
 	
 	
 }

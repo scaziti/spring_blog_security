@@ -15,7 +15,7 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "tema")
+@Table(name = "tb_tema")
 public class TemaModel 
 {
 	@Id
@@ -53,5 +53,6 @@ public class TemaModel
 	public void setPostagem(List<Postagem> postagem) {
 		this.postagem = postagem;
 	}
+	
 	
 }
